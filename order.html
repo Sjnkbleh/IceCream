@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Life</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Sweet Life</h1>
+        <nav>
+            <ul>
+                <li><a class="not-active" href="index.html">Home</a></li>
+                <li><a class="not-active" href="register.html">Register</a></li>
+                <li><a class="not-active" href="features.html">Features</a></li>
+                <li><a class="active" href="order.html">Order now!</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Order</h2>
+
+        <form id="odform" method="post" action="https://mercury.swin.edu.au/it000000/cos10005/formtest.php">
+            <h3>Product Selection</h3>
+
+            <div class="input-group">
+                <span>Ice cream type&nbsp;<span class="required">*</span></span>
+
+                <div class="choice-group">
+                    <label class="choice-option" for="gelato-req">
+                        <input type="radio" name="type" id="gelato-req" value="Gelato">
+                        <span class="custom-radio"></span>
+                        Gelato
+                    </label>
+                    <label class="choice-option" for="cream-cone-req">
+                        <input type="radio" name="type" id="cream-cone-req" value="Cream-cone">
+                        <span class="custom-radio"></span>
+                        Ice cream cone
+                    </label>
+                    <label class="choice-option" for="sorbet-req">
+                        <input type="radio" name="type" id="sorbet-req" value="Sorbet">
+                        <span class="custom-radio"></span>
+                        Sorbet
+                    </label>
+                </div>
+                <p class="errMsg" id="typeErrMsg"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="product-req">Ice cream flavor&nbsp;<span class="required">*</span></label>
+                <select id="product-req" name="product">
+                    <option value="" disabled selected hidden>Choose a flavor</option>
+                    <option value="Mint-choco-chip">Mint Chocolate Chip</option>
+                    <option value="Neapolitan">Neapolitan</option>
+                    <option value="Straw-cheesecake">Strawberry cheesecake</option>
+                    <option value="Banana">Banana</option>
+                </select>
+            </div>
+            <p class="errMsg" id="flavorErrMsg"></p>
+
+            <fieldset>
+                <legend>Features</legend>
+
+                <div class="input-group">
+                    <span>Size&nbsp;<span class="required">*</span></span>
+
+                    <div class="choice-group">
+                        <label class="choice-option" for="S">
+                            <input type="radio" name="size" id="S" value="S">
+                            <span class="custom-radio"></span>
+                            Small
+                        </label>
+                        <label class="choice-option" for="M">
+                            <input type="radio" name="size" id="M" value="M">
+                            <span class="custom-radio"></span>
+                            Medium
+                        </label>
+                        <label class="choice-option" for="L">
+                            <input type="radio" name="size" id="L" value="L">
+                            <span class="custom-radio"></span>
+                            Large
+                        </label>
+                    </div>
+                    <p class="errMsg" id="sizeErrMsg"></p>
+                </div>
+
+                <div class="input-group">
+                    <p>Topping</p>
+                    <div class="choice-group">
+                        <label class="choice-option" for="sprinkles">
+                            <input type="checkbox" name="topping[]" id="sprinkles" value="sprinkles">
+                            <span class="custom-checkbox"></span>
+                            Sprinkles
+                        </label>
+                        <label class="choice-option" for="choco-chip">
+                            <input type="checkbox" name="topping[]" id="choco-chip" value="choco-chip">
+                            <span class="custom-checkbox"></span>
+                            Chocolate chip
+                        </label>
+                        <label class="choice-option" for="peanuts">
+                            <input type="checkbox" name="topping[]" id="peanuts" value="peanuts">
+                            <span class="custom-checkbox"></span>
+                            Peanuts
+                        </label>
+                        <label class="choice-option" for="cherry">
+                            <input type="checkbox" name="topping[]" id="cherry" value="cherry">
+                            <span class="custom-checkbox"></span>
+                            Cherry
+                        </label>
+                        <label class="choice-option" for="waffle-cone">
+                            <input type="checkbox" name="topping[]" id="waffle-cone" value="waffle-cone">
+                            <span class="custom-checkbox"></span>
+                            Waffle cone
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="input-group">
+                <label for="comments">Are there any other things you want to specify?</label>
+                <textarea id="comments" name="comments"></textarea>
+            </div>
+
+            <hr>
+
+            <h3>Receiving method</h3>
+
+            <div class="input-group">
+                <div class="choice-group">
+                    <label class="choice-option" for="delivery">
+                        <input type="radio" name="rMethod" id="delivery" value="delivery">
+                        <span class="custom-radio"></span>
+                        Delivery
+                    </label>
+
+                    <label class="choice-option" for="pickup">
+                        <input type="radio" name="rMethod" id="pickup" value="pickup">
+                        <span class="custom-radio"></span>
+                        Pickup
+                    </label>
+                </div>
+                <p class="errMsg" id="deliveryErrMsg"></p>
+            </div>
+
+            <fieldset id="dAdd">
+                <legend>Delivery address</legend>
+
+                <div class="input-group">
+                    <label for="street-address">Street address&nbsp;<span class="required">*</span></label>
+                    <input type="text" name="streetAddress" id="street-address">
+                    <p class="errMsg" id="streetAddErrMsg"></p>
+                </div>
+
+                <div class="input-group">
+                    <label for="suburb-town">Suburb/Town&nbsp;<span class="required">*</span></label>
+                    <input type="text" name="suburbTown" id="suburb-town">
+                    <p class="errMsg" id="suburb-townErrMsg"></p>
+                </div>
+
+                <div class="input-group">
+                    <label for="state">State&nbsp;<span class="required">*</span></label>
+                    <select name="state" id="state">
+                        <option value="" disabled selected hidden>Choose a state</option>
+                        <option value="VIC">VIC</option>
+                        <option value="NSW">NSW</option>
+                        <option value="QLD">QLD</option>
+                        <option value="NT">NT</option>
+                        <option value="WA">WA</option>
+                        <option value="SA">SA</option>
+                        <option value="TAS">TAS</option>
+                        <option value="ACT">ACT</option>
+                    </select>
+                    <p class="errMsg" id="stateErrMsg"></p>
+                </div>
+
+                <div class="input-group">
+                    <label for="postcode">Postcode&nbsp;<span class="required">*</span></label>
+                    <input type="text" name="postcode" id="postcode">
+                    <p class="errMsg" id="postcodeErrMsg"></p>
+                </div>
+            </fieldset>
+
+            <div class="input-group">
+                <label for="bAdd">Billing address</label>
+                <input type="text" name="bAdd" id="bAdd">
+                <p class="errMsg" id="billingAddErrMsg"></p>
+                <br>
+                <label class="choice-option" for="sameAdd" id="testId">
+                    <input type="checkbox" name="sameAdd[]" id="sameAdd" value="sameAdd">
+                    <span class="custom-checkbox"></span>
+                    Same as delivery address
+                </label>
+                <p class="errMsg" id="deliveryAddErrMsg"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="telephone">Phone number&nbsp;<span class="required">*</span></label>
+                <input type="text" name="phoneNumber" id="telephone" maxlength="10" placeholder="##########">
+                <p class="errMsg" id="phoneErrMsg"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email&nbsp;<span class="required">*</span></label>
+                <input type="email" name="email" id="email" placeholder="example@domain.com">
+                <p class="errMsg" id="emailErrMsg"></p>
+            </div>
+
+            <hr>
+
+            <h3>Payment method</h3>
+
+            <div class="input-group">
+                <div class="choice-group">
+                    <label class="choice-option" for="on-pickup">
+                        <input type="radio" name="pMethod" id="on-pickup" value="on-pickup">
+                        <span class="custom-radio"></span>
+                        Pay on pickup
+                    </label>
+
+                    <label class="choice-option" for="online">
+                        <input type="radio" name="pMethod" id="online" value="online">
+                        <span class="custom-radio"></span>
+                        Online
+                    </label>
+                </div>
+                <p class="errMsg" id="paymentErrMsg"></p>
+            </div>
+            
+            <fieldset id="credit">
+                <legend>Credit card information</legend>
+                <div class="input-group">
+                    <span>Credit card type&nbsp;<span class="required">*</span></span>
+
+                    <div class="choice-group">
+                        <label class="choice-option" for="visa">
+                            <input type="radio" name="ccType" id="visa" value="visa">
+                            <span class="custom-radio"></span>
+                            Visa
+                        </label>
+                        <label class="choice-option" for="MasterCard">
+                            <input type="radio" name="ccType" id="MasterCard" value="MasterCard">
+                            <span class="custom-radio"></span>
+                            MasterCard
+                        </label>
+                        <label class="choice-option" for="AmericanExpress">
+                            <input type="radio" name="ccType" id="AmericanExpress" value="AmericanExpress">
+                            <span class="custom-radio"></span>
+                            American Express
+                        </label>
+                    </div>
+                    <p class="errMsg" id="ccTypeErrMsg"></p>
+                </div>
+
+                <div class="input-group">
+                    <label for="cc-num">Credit card number&nbsp;<span class="required">*</span></label>
+                    <input type="text" name="cc-num" id="cc-num">
+                    <p class="errMsg" id="ccNumErrMsg"></p>
+                </div>
+
+                <div class="input-group">
+                    <label for="exp-date">Expiration date&nbsp;<span class="required">*</span></label>
+                    <input type="text" name="exp-date" id="exp-date">
+                    <p class="errMsg" id="expDateErrMsg"></p>
+                </div>
+
+                <div class="input-group">
+                    <label for="CVV">CVV&nbsp;<span class="required">*</span></label>
+                    <input type="text" name="CVV" id="CVV">
+                    <p class="errMsg" id="cvvErrMsg"></p>
+                </div>
+            </fieldset>
+
+            <div class="two-columns">
+                <input type="submit" value="Order">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </main>
+    
+    <footer>
+        <div class="index-loc">
+            <p>308 Negra Arroyo Lane, Albuquerque, New Mexico, 87104.</p>
+        </div>
+        <p>Swinburne University of Technology</p>
+        <p>COS10005 - Web Development</p>
+        <p>Made by Xuan Sinh Dinh</p>
+    </footer>
+</body>
+</html>

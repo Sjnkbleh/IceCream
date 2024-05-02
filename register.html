@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Life</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Sweet Life</h1>
+        <nav>
+            <ul>
+                <li><a class="not-active" href="index.html">Home</a></li>
+                <li><a class="active" href="register.html">Register</a></li>
+                <li><a class="not-active" href="features.html">Features</a></li>
+                <li><a class="not-active" href="order.html">Order now!</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Registration</h2>
+
+        <form id="regform" method="post" action="https://mercury.swin.edu.au/it000000/cos10005/formtest.php">
+            <h3>Personal Information</h3>
+
+            <div class="input-group">
+                <label for="uname">Username&nbsp;<span class="required">*</span></label>
+                <input type="text" name="uname" id="uname" maxlength="25">
+                <p class="errMsg" id="unameErrMsg"></p>
+            </div>
+
+            <div class="input-group">
+                <label for="pwd">Password&nbsp;<span class="required">*</span></label>
+                <input type="password" name="pword" id="pwd">
+                <p class="errMsg" id="pwdErrMsg" ></p>
+            </div>
+
+            <div class="input-group">
+                <span>Gender&nbsp;<span class="required">*</span></span>
+                <div class="choice-group">
+                    <label class="choice-option" for="genM">
+                        <input type="radio" name="gender" id="genM" value="male">
+                        <span class="custom-radio"></span>
+                        Male
+                    </label>
+
+                    <label class="choice-option" for="genF">
+                        <input type="radio" name="gender" id="genF" value="female">
+                        <span class="custom-radio"></span>
+                        Female
+                    </label>
+                </div>
+                <p class="errMsg" id="genErrMsg"></p>
+            </div>
+
+            <hr>
+
+            <h3>Product Selection</h3>
+
+            <div class="input-group">
+                <label for="type">Favorite type of ice cream</label>
+                <select id="type" name="type">
+                    <option value="none">None</option>
+                    <option value="gelato">Gelato</option>
+                    <option value="cream-cone">Ice cream cone</option>
+                    <option value="sorbet">Sorbet</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="product">Favorite flavor of ice cream</label>
+                <select id="product" name="product">
+                    <option value="none">None</option>
+                    <option value="mint-choco-chip">Mint Chocolate Chip</option>
+                    <option value="neapolitan">Neapolitan</option>
+                    <option value="straw-cheesecake">Strawberry cheesecake</option>
+                    <option value="banana">Banana</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="comments">Are there any other things you want to specify?</label>
+                <textarea id="comments" name="comments"></textarea>
+            </div>
+
+            <div class="two-columns">
+                <input type="submit" value="Register">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </main>
+    
+    <footer>
+        <div class="index-loc">
+            <p>308 Negra Arroyo Lane, Albuquerque, New Mexico, 87104.</p>
+        </div>
+        <p>Swinburne University of Technology</p>
+        <p>COS10005 - Web Development</p>
+        <p>Made by Xuan Sinh Dinh</p>
+    </footer>
+</body>
+</html>
